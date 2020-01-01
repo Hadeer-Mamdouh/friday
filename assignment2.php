@@ -5,13 +5,11 @@
     $films=array("Fast","Predestination","Persuit","Avatar","Prestige");
     for ($i=0; $i <count($films) ; $i++) { 
     	if ($films[$i]=="Avatar") {
-            echo "Yes";
+            echo "Found";
     		break;
     	
     	}
-        elseif ($films[$i]!="Avatar") {
-            echo "No ";
-        }
+        
     }
     echo "<hr/>";
 //-----------------------------------------------------------------------------
