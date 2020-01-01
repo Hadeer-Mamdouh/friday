@@ -5,11 +5,13 @@
     $films=array("Fast","Predestination","Persuit","Avatar","Prestige");
     for ($i=0; $i <count($films) ; $i++) { 
     	if ($films[$i]=="Avatar") {
+            echo "Yes";
     		break;
+    	
     	}
-    	else{
-    		echo $films[$i] . "-";
-    	}
+        elseif ($films[$i]!="Avatar") {
+            echo "No ";
+        }
     }
     echo "<hr/>";
 //-----------------------------------------------------------------------------
@@ -51,7 +53,12 @@
     $boolean=array(1,"tariq",1.5,true,7,"s",false);
       for($i=0;$i<count($boolean);$i++){
         if($boolean[$i]===true || $boolean[$i]===false){
-            continue;
+           if($boolean[$i]===true){
+            echo "Yes";
+           }
+           else if($boolean[$i]===false){
+            echo "No";
+           }
         }
         else{
             echo $boolean[$i] . "  ";
@@ -63,7 +70,12 @@
     $num1=0;
     while ( $num1< count($boolean)) {
       if($boolean[$num1]===true || $boolean[$num1]===false){
-            
+           if($boolean[$num1]===true){
+            echo "Yes";
+           }
+           else if($boolean[$num1]===false){
+            echo "No";
+           }  
         }
         else{
             echo $boolean[$num1] . "  ";
@@ -71,7 +83,6 @@
        $num1++;
     }
      echo "<hr/>";
-    
     
 //---------------------------------------------------------------------------------
     //5-max
@@ -110,7 +121,18 @@
 //-----------------------------------------------------------------------------------
    //8-sorting
 //------------------------------------------------------------------------------------
-    sort($test1);
+    
+    $num=0;
+    for ($i=0; $i <count($test1) ; $i++){
+       for ($j=$i; $j >0 ; $j--) { 
+          if($test1[$j]<$test1[$j-1]){
+             $num=$test1[$j];
+             $test1[$j]=$test1[$j-1];
+             $test1[$j-1]=$num;
+          }
+       }
+    }
+
     for ($i=0; $i <count($test1) ; $i++) { 
         echo $test1[$i] . "  ";
     }
